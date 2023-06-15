@@ -8,7 +8,7 @@
 
   onMount(() => {
     footerData.set({
-      topText: "UBports Installer is starting up",
+      topText: "Droidian Installer is starting up",
       underText: "Starting adb service"
     });
   });
@@ -79,7 +79,7 @@
 
   .progress-bar {
     width: var(--progressWidth);
-    background-color: #e95420;
+    background-color: #3DDC84;
     border-radius: 0 0.25rem 0.25rem 0;
   }
 

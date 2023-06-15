@@ -2,7 +2,8 @@
 
 /*
  * Copyright (C) 2017-2022 UBports Foundation <info@ubports.com>
- *
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
+ * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -25,7 +26,6 @@ const cli = require("./lib/cli.js");
 const log = require("./lib/log.js");
 const updater = require("./lib/updater.js");
 const mainEvent = require("./lib/mainEvent.js");
-const reporter = require("./lib/reporter.js");
 const menuManager = require("./lib/menuManager.js");
 const core = require("./core/core.js");
 const window = require("./lib/window.js");
@@ -45,16 +45,10 @@ if (process.env.ROLLUP_WATCH) {
 
 let mainWindow;
 
-// Submit a user-requested bug-report
-// FIXME move after a better way to access mainWindow has been found
-ipcMain.on("reportResult", async (event, result, error) => {
-  reporter.report(result, error, mainWindow);
-});
-
 // Restart the installer
 // FIXME move after a better way to access mainWindow has been found
 mainEvent.on("restart", () => {
-  log.info("UBports Installer restarting...");
+  log.info("Droidian Installer restarting...");
   window.send("user:restart");
   core.reset();
   core.prepare(cli.file, true);
@@ -62,9 +56,8 @@ mainEvent.on("restart", () => {
 
 async function createWindow() {
   log.info(
-    "Welcome to the UBports Installer version " + packageInfo.version + "!"
+    "Welcome to the Droidian Installer version " + packageInfo.version + "!"
   );
-  log.verbose(`Running on: ${await reporter.getEnvironment()}`);
   log.verbose(`Versions: ${JSON.stringify(process.versions)}`);
 
   mainWindow = new BrowserWindow({
@@ -73,7 +66,7 @@ async function createWindow() {
     height: 750,
     minHeight: 600,
     icon: path.join(__dirname, "../build/icons/icon.png"),
-    title: "UBports Installer (" + packageInfo.version + ")",
+    title: "Droidian Installer (" + packageInfo.version + ")",
     kiosk: false,
     fullscreen: false,
     webPreferences: {

@@ -1,22 +1,22 @@
 <script>
-  let ubpRobotFoot = true;
-  let ubpRobotSide = false;
+  let droidianFoot = true;
+  let droidianSide = false;
 
   export function setPosition(position) {
     switch (position) {
       case "foot":
-        ubpRobotFoot = true;
-        ubpRobotSide = false;
+        droidianFoot = true;
+        droidianSide = false;
         break;
 
       case "side":
-        ubpRobotFoot = false;
-        ubpRobotSide = true;
+        droidianFoot = false;
+        droidianSide = true;
         break;
 
       case "center":
-        ubpRobotFoot = false;
-        ubpRobotSide = false;
+        droidianFoot = false;
+        droidianSide = false;
         break;
 
       default:
@@ -26,19 +26,19 @@
 </script>
 
 <img
-  src="./img/yumi.svg"
-  alt="yumi"
-  class="yumi"
-  class:yumi-foot={ubpRobotFoot}
-  class:yumi-side={ubpRobotSide}
+  src="./img/droidian.svg"
+  alt="droidian"
+  class="droidian"
+  class:droidian-foot={droidianFoot}
+  class:droidian-side={droidianSide}
   width="100"
 />
 
 <style>
-  .yumi {
+  .droidian {
     bottom: 50%;
     right: 50%;
-    margin-bottom: -72px;
+    margin-bottom: -50px;
     margin-right: -50px;
     text-align: center;
     position: absolute;
@@ -54,15 +54,15 @@
     transform: translateZ(0) scale(1, 1);
   }
 
-  .yumi-foot {
-    bottom: 10px !important;
+  .droidian-foot {
+    bottom: 20px !important;
     position: absolute;
     right: 1.5rem !important;
     width: 3.2rem !important;
     margin: 0;
   }
 
-  .yumi-side {
+  .droidian-side {
     position: absolute;
     right: 62% !important;
     bottom: 35% !important;

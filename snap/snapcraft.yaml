@@ -1,8 +1,8 @@
-name: ubports-installer
-title: UBports Installer
-adopt-info: ubports-installer
-summary: The easy way to install Ubuntu Touch on UBports devices.
-description: A friendly cross-platform Installer for Ubuntu Touch. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
+name: drodian-installer
+title: Droidian Installer
+adopt-info: droidian-installer
+summary: The easy way to install Droidian on supported devices.
+description: A friendly cross-platform Installer for Droidian. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
 icon: build/icons/icon.png
 architectures:
   - build-on: amd64
@@ -16,8 +16,8 @@ confinement: strict
 base: core20
 
 apps:
-  ubports-installer:
-    command: ./app/ubports-installer --no-sandbox
+  droidian-installer:
+    command: ./app/droidian-installer --no-sandbox
     extensions:
       - gnome-3-38
     plugs:
@@ -28,7 +28,7 @@ apps:
       - raw-usb
 
 parts:
-  ubports-installer:
+  droidian-installer:
     plugin: dump
     source: .
     build-snaps:
@@ -51,14 +51,14 @@ parts:
       echo "updating npm" && npm install npm@latest -g
       echo "installing dependencies" && npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=$https_proxy npm install || sleep 15 && npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=$https_proxy npm install
       echo "rollup" && npm run build
-      [ `uname -m` == "aarch64" ] && UBPORTS_ARCH=arm64 || UBPORTS_ARCH=x64
-      [ `uname -m` == "aarch64" ] && UBPORTS_DISTDIR=linux-arm64-unpacked || UBPORTS_DISTDIR=linux-unpacked
+      [ `uname -m` == "aarch64" ] && DROIDIAN_ARCH=arm64 || DROIDIAN_ARCH=x64
+      [ `uname -m` == "aarch64" ] && DROIDIAN_DISTDIR=linux-arm64-unpacked || DROIDIAN_DISTDIR=linux-unpacked
       ELECTRON_GET_USE_PROXY=true
       GLOBAL_AGENT_HTTPS_PROXY=$https_proxy
-      ./build.js -o 'linux' -p 'dir' -a $UBPORTS_ARCH -e '{"package": "snap"}'
+      ./build.js -o 'linux' -p 'dir' -a $DROIDIAN_ARCH -e '{"package": "snap"}'
       mkdir -p $SNAPCRAFT_PART_INSTALL/app
       rm -rf $SNAPCRAFT_PART_INSTALL/app/*
-      mv dist/$UBPORTS_DISTDIR/* $SNAPCRAFT_PART_INSTALL/app
+      mv dist/$DROIDIAN_DISTDIR/* $SNAPCRAFT_PART_INSTALL/app
     prime:
       - -node_modules
       - -lib/node_modules

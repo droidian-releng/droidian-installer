@@ -28,7 +28,7 @@ describe("getLatestVersion()", () => {
     expect.assertions(1);
     return updater.getLatestVersion().catch(e => {
       expect(e.message).toMatch(
-        "Failed to get latest version of the UBports Installer"
+        "Failed to get latest version of the Droidian Installer"
       );
     });
   });

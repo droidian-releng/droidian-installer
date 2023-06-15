@@ -1,28 +1,27 @@
 {
-  "name": "ubports-installer",
-  "version": "0.10.0",
-  "description": "The easy way to install Ubuntu Touch on UBports devices. A friendly cross-platform Installer for Ubuntu Touch. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.",
+  "name": "droidian-installer",
+  "version": "0.0.1",
+  "description": "The easy way to install Droidian on supported devices. A friendly cross-platform Installer for Droidian. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.",
   "keywords": [
-    "Ubuntu",
-    "Ubuntu Touch",
-    "UBports",
-    "UBports Installer",
+    "Debian",
+    "Droidian",
+    "Droidian Installer",
     "Android",
     "ADB",
     "Fastboot",
     "Heimdall"
   ],
-  "homepage": "https://devices.ubuntu-touch.io",
+  "homepage": "https://devices.droidian.org",
   "bugs": {
-    "url": "https://github.com/ubports/ubports-installer/issues",
-    "email": "info@ubports.com"
+    "url": "https://github.com/droidian-releng/droidian-installer/issues",
+    "email": "info@droidian.org"
   },
-  "repository": "https://github.com/ubports/ubports-installer",
-  "author": "Johannah Sprinz <neo@neothethird.de>",
+  "repository": "https://github.com/droidian-releng/droidian-installer",
+  "author": "Erik Inkinen <erik.inkinen@erikinkinen.fi>",
   "license": "GPL-3.0",
   "main": "src/main.js",
   "bin": {
-    "ubports-installer": "src/main.js"
+    "droidian-installer": "src/main.js"
   },
   "scripts": {
     "build": "npx rollup -c",

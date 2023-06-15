@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,14 +28,14 @@ class Cache {
   constructor() {
     switch (process.platform) {
       case "darwin":
-        this.path = path.join(process.env.HOME, "Library/Caches", "ubports");
+        this.path = path.join(process.env.HOME, "Library/Caches", "droidian");
         break;
       case "win32":
-        this.path = path.join(process.env.APPDATA, "ubports");
+        this.path = path.join(process.env.APPDATA, "droidian");
         break;
       case "linux":
       default:
-        this.path = path.join(process.env.HOME, ".cache", "ubports");
+        this.path = path.join(process.env.HOME, ".cache", "droidian");
     }
     this.ensure();
   }

@@ -9,10 +9,9 @@
 
 <div class="header">
   <h1 id="header-text" class="text-muted installer">
-    UBports Installer ({version})
+    Droidian Installer ({version})
   </h1>
   <div class="header-buttons">
-    <a class="btn btn-primary" href="https://ubports.com/donate">Donate</a>
     <button class="btn btn-primary" on:click={requestReport}
       >Report a bug</button
     >

@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +23,7 @@ const axios = require("axios");
 /** @module api */
 
 const api = axios.create({
-  baseURL: "https://ubports.github.io/installer-configs/v2/",
+  baseURL: "https://droidian-devices.github.io/installer-configs/v2",
   timeout: 60000
 });
 
@@ -37,7 +38,7 @@ const getIndex = () => api.get("/").then(({ data }) => data);
  * @returns {Promise<Array<String>>}
  */
 const getDeviceSelects = () =>
-  getIndex().then(devices =>
+  getIndex().then(devices => 
     devices.map(({ name, codename }) => {
       return { name: name, value: codename };
     })

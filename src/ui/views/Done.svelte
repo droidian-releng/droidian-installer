@@ -15,37 +15,14 @@
   <div class="col-6">
     <h4 style="font-weight: bold;">Success!</h4>
     <p>
-      The installation process from the computer is done. The device will now
-      perform the remaining steps which should take less than five minutes.
-      After the installation, the device will reboot and you can begin to
-      explore Ubuntu Touch.
+      The installation process from the computer is done. The device will now reboot and you can begin to
+      explore Droidian.
     </p>
     <p>
       Found something you don't like?<br /><a
-        href="https://github.com/ubports/ubports-touch">Tell us</a
+        href="https://t.me/DroidianLinux">Tell us</a
       >, or help us change it!
     </p>
-    <p>
-      Development of Ubuntu Touch is driven by the <a href="https://ubports.com"
-        >UBports Community</a
-      >.
-    </p>
-    <p>
-      <a href="https://ubports.com/donate">Donate</a> now to allow us to continue
-      our mission!
-    </p>
-    <div class="col">
-      <a
-        class="btn btn-outline-dark"
-        style="width: 49%; margin-bottom: 10px; margin-right: 5px"
-        href="https://ubports.com/join-us">Get involved</a
-      >
-      <a
-        class="btn btn-primary"
-        style="width: 49%; margin-bottom: 10px;"
-        href="https://ubports.com/donate">Donate</a
-      >
-    </div>
     <p>
       Got more devices you want to flash?
       <button

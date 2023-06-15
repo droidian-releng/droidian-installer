@@ -28,11 +28,7 @@
     </h4>
     <p>
       <a
-        href={`https://devices.ubuntu-touch.io/device/${$installConfigData.codename}`}
-        >about this device</a
-      >
-      <a
-        href={`https://github.com/ubports/installer-configs/blob/master/v2/devices/${$installConfigData.codename}.yml`}
+        href={`https://github.com/droidian-devices/installer-configs/blob/master/v2/devices/${$installConfigData.codename}.yml`}
         >view config file</a
       >
     </p>

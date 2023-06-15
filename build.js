@@ -4,6 +4,7 @@
 
 /*
  * Copyright (C) 2017-2021 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,9 +61,9 @@ const opts = cli.opts();
 
 var targetOs;
 var buildConfig = {
-  appId: "com.ubports.installer",
-  productName: "ubports-installer",
-  copyright: `Copyright © 2017-${new Date().getFullYear()} UBports Foundation`,
+  appId: "org.droidian.installer",
+  productName: "droidian-installer",
+  copyright: `Copyright © 2017-${new Date().getFullYear()} UBports Foundation, Erik Inkinen`,
   artifactName: "${name}_${version}_${os}_${arch}.${ext}",
   publish: [],
   files: [
@@ -110,7 +111,7 @@ switch (opts.os) {
       linux: {
         target,
         icon: "build/icons",
-        synopsis: "Install Ubuntu Touch on UBports devices",
+        synopsis: "Install Droidian on supported devices",
         category: "Utility"
       },
       deb: {

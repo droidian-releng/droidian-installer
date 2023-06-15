@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2020-2022 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +30,7 @@ const HeimdallPlugin = require("./heimdall/plugin.js");
 const SystemimagePlugin = require("./systemimage/plugin.js");
 
 /**
- * Index of UBports Installer plugins
+ * Index of Droidian Installer plugins
  * @property {Props} props props reference
  * @property {Object} plugins plugins namespace
  * @property {AdbPlugin} plugins.adb adb plugin

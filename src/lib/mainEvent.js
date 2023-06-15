@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -74,9 +75,9 @@ mainEvent.on("user:oem-lock", (enable = false, code_url, unlock) => {
     description:
       (enable
         ? `Your device could not be unlocked. Please make sure OEM unlocking is enabled in the devices [developer options](https://www.thecustomdroid.com/enable-oem-unlocking-on-android/). After that, you can select the button below to continue the installation.`
-        : `Your device's bootloader is locked, that means installation of third party operating systems like Ubuntu Touch is disabled.
+        : `Your device's bootloader is locked, that means installation of third party operating systems like Droidian is disabled.
 
-**Removing this lock might void the warranty. If you want to be sure, please ask your manufacturer or vendor if they allow this. UBports is not responsible and won't replace devices in case of warranty loss. You are responsible for your own actions.**
+**Removing this lock might void the warranty. If you want to be sure, please ask your manufacturer or vendor if they allow this. Droidian is not responsible and won't replace devices in case of warranty loss. You are responsible for your own actions.**
 
 Do you want to unlock your device now?
 
@@ -111,7 +112,7 @@ mainEvent.on("user:update-available", (updateUrl, prerelease) => {
   log.warn(
     "Please update: " +
       (packageInfo.package === "snap"
-        ? "snap refresh ubports-installer --stable"
+        ? "snap refresh droidian-installer --stable"
         : updateUrl)
   );
   prompt({
@@ -124,7 +125,7 @@ mainEvent.on("user:update-available", (updateUrl, prerelease) => {
       (prerelease ? "running a prerelease" : "not running the latest stable") +
       " version. Using the latest stable release is recommended for most users. You can still use this version, but there might be bugs and issues that do not affect the stable release.\n\n" +
       (packageInfo.package === "snap"
-        ? "Run `snap refresh ubports-installer --stable` in your terminal to install the latest version"
+        ? "Run `snap refresh droidian-installer --stable` in your terminal to install the latest version"
         : `Please download the [latest version](${updateUrl})`) +
       (prerelease ? ", unless you know what you're doing." : "."),
     confirm: "Download"
@@ -149,11 +150,11 @@ mainEvent.on("user:unlock", (fields, resolve) => {
 
 // installer_version
 mainEvent.on("user:installer_version", (version, resolve) => {
-  log.warn(`Incompatible UBports Installer version! Required: ${version}`);
+  log.warn(`Incompatible Droidian Installer version! Required: ${version}`);
   prompt({
     title: "Incompatible installer version",
     dismissable: false,
-    description: `This installation procedure requires UBports Installer \`${version}\`. You are running \`${packageInfo.version}\`. Please use a [compatible installer](https://github.com/ubports/ubports-installer/releases). You might also ignore this warning, but there is no guarantee the installer will work as expected.`,
+    description: `This installation procedure requires Droidian Installer \`${version}\`. You are running \`${packageInfo.version}\`. Please use a [compatible installer](https://github.com/droidian-releng/droidian-installer/releases). You might also ignore this warning, but there is no guarantee the installer will work as expected.`,
     confirm: "I know what I'm doing, ignore warning and continue"
   }).then(() => resolve(log.warn("Installer version constraint ignored")));
 });
@@ -203,7 +204,7 @@ mainEvent.on("user:write:done", () => {
   window.send("user:write:done");
   window.send("user:write:speed");
   log.info(
-    "All done! Your device will now reboot and complete the installation. Enjoy exploring Ubuntu Touch!"
+    "All done! Your device will now reboot and complete the installation. Enjoy exploring Droidian!"
   );
   if (!settings.get("never.opencuts")) {
     setTimeout(() => {
@@ -244,7 +245,7 @@ mainEvent.on("user:no-network", () => {
     title: "Internet connection lost",
     dismissable: true,
     description:
-      "The installer failed to connect to the UBports servers. Are you connected to the internet? If you're using a proxy, you might have to [configure it](https://www.golinuxcloud.com/set-up-proxy-http-proxy-environment-variable/) by setting the **https_proxy** environment variable.",
+      "The installer failed to connect to the network. Are you connected to the internet? If you're using a proxy, you might have to [configure it](https://www.golinuxcloud.com/set-up-proxy-http-proxy-environment-variable/) by setting the **https_proxy** environment variable.",
     confirm: "Try again"
   }).then(() => mainEvent.emit("restart"));
 });

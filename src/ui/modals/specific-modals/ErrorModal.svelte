@@ -34,7 +34,7 @@
     </p>
     <p>
       If this continues to happen, please check if you are affected by <a
-        href="https://github.com/ubports/ubports-installer/issues"
+        href="https://github.com/droidian-releng/droidian-installer/issues"
         >a known bug</a
       >.
     </p>
@@ -45,35 +45,26 @@
     <pre>{errorData}</pre>
     {#if showNotLatestStable}
       <p>
-        You are not using the latest stable version of the UBports Installer.
+        You are not using the latest stable version of the Droidian Installer.
       </p>
     {/if}
     {#if showGenericUpdateInstructionsError}
       <p>
         You can <a
-          href="https://github.com/ubports/ubports-installer/releases/latest"
+          href="https://github.com/droidian-releng/droidian-installer/releases/latest"
           >download the latest version from GitHub</a
         >.
       </p>
     {/if}
     {#if showSnapUpdateInstructionsError}
       <p>
-        Run <code>snap refresh ubports-installer --stable</code> in your terminal
+        Run <code>snap refresh droidian-installer --stable</code> in your terminal
         to install the latest version.
       </p>
     {/if}
     <p>
-      If you need help, you can join UBports' support channels on
-      <a href="https://t.me/WelcomePlus">telegram</a>
-      or
-      <a
-        href="https://matrix.to/#/!KwdniMNeTmClpgHkND:matrix.org?via=matrix.org&via=ubports.chat&via=disroot.org"
-        >matrix</a
-      >
-      or ask a question
-      <a href="https://forums.ubports.com">in the forum</a>
-      or on
-      <a href="https://askubuntu.com">askubuntu</a>.
+      If you need help, you can join Droidian's support channels on
+      <a href="https://t.me/Droidian">Telegram</a>.
     </p>
   </div>
   <div class="col" slot="actions">

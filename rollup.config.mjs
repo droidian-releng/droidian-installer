@@ -20,7 +20,7 @@ function serve() {
       if (server) return;
       server = spawn(
         "electron",
-        [".", ...process.env.UBPORTS_INSTALLER_FLAGS.split(" ")],
+        [".", ...process.env.DROIDIAN_INSTALLER_FLAGS.split(" ")],
         {
           stdio: ["ignore", "inherit", "inherit"],
           shell: true

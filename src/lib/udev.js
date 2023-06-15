@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -111,7 +112,7 @@ const rules = vendorIds
   .join("\n");
 
 const udevCommand = [
-  `echo '${rules}' > /etc/udev/rules.d/10-ubports.rules`,
+  `echo '${rules}' > /etc/udev/rules.d/10-droidian.rules`,
   "(udevadm control --reload-rules || true)",
   "(udevadm trigger || true)",
   "(service udev restart || true)"
@@ -128,7 +129,7 @@ class Udev {
     sudo.exec(
       udevCommand,
       {
-        name: "UBports Installer",
+        name: "Droidian Installer",
         icns: path.join(__dirname, "../../build/icons/icon.icns")
       },
       error => {

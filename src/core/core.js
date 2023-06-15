@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2022 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +43,7 @@ const semver = require("semver");
  */
 
 /**
- * UBports Installer core. Parses config files to run actions from plugins.
+ * Droidian Installer core. Parses config files to run actions from plugins.
  * @property {Props} props properties object
  * @property {PluginIndex} plugins installer plugins
  */

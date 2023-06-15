@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2022 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +24,7 @@ const semverGt = require("semver/functions/gt");
 const semverLt = require("semver/functions/lt");
 
 /**
- * UBports Installer version management
+ * Droidian Installer version management
  * @property {String} updateUrl url to download the latest stable version of the current package
  */
 class Updater {
@@ -35,7 +36,7 @@ class Updater {
   }
 
   /**
-   * resolves latest version of the UBports Installer
+   * resolves latest version of the Droidian Installer
    * @returns {Promise<String>}
    */
   async getLatestVersion() {
@@ -44,7 +45,7 @@ class Updater {
     } else {
       return axios
         .get(
-          "https://api.github.com/repos/ubports/ubports-installer/releases/latest",
+          "https://api.github.com/repos/droidian-releng/droidian-installer/releases/latest",
           {
             json: true,
             headers: { "User-Agent": "axios" }
@@ -56,7 +57,7 @@ class Updater {
         })
         .catch(e => {
           throw new Error(
-            `Failed to get latest version of the UBports Installer: ${e}`
+            `Failed to get latest version of the Droidian Installer: ${e}`
           );
         });
     }

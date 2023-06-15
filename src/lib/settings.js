@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2022 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +22,7 @@ const { ipcMain } = require("electron");
 const Store = require("electron-store");
 
 /**
- * permanent UBports Installer settings
+ * permanent Droidian Installer settings
  */
 const settings = new Store({
   options: {

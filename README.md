@@ -1,30 +1,22 @@
-# UBports Installer ![Continuous Integration](https://github.com/ubports/ubports-installer/workflows/Continuous%20Integration/badge.svg) [![snap](https://snapcraft.io//ubports-installer/badge.svg)](https://snapcraft.io/ubports-installer) [![codecov](https://codecov.io/gh/ubports/ubports-installer/branch/master/graph/badge.svg?token=cEneFUUbgt)](https://codecov.io/gh/ubports/ubports-installer/)
+# Droidian Installer 
 
-Fear not! Installing [UBports](https://ubports.com) [Ubuntu Touch](https://ubuntu-touch.io) on your [device](https://devices.ubuntu-touch.io) is easy! Just download the UBports Installer package for your operating system and sit back and relax while your computer does all the rest. Installing third-party operating systems has never been so easy!
-
-|                                                                                   ![linux logo](https://i.ibb.co/CPq1pL9/linux.png) &nbsp; Linux                                                                                   | ![mac logo](https://i.ibb.co/Qn2NXq9/apple.png) &nbsp; macOS | ![windowslogo](https://i.ibb.co/RNk81kH/windows10.png) &nbsp; Windows |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------------------------: |
-| [snap](https://snapcraft.io/ubports-installer) <br> `snap install ubports-installer` <br> [AppImage](https://devices.ubuntu-touch.io/installer?package=appimage) <br> [deb](https://devices.ubuntu-touch.io/installer?package=deb) | [dmg](https://devices.ubuntu-touch.io/installer?package=dmg) |     [exe](https://devices.ubuntu-touch.io/installer?package=exe)      |
-
-## Troubleshooting
-
-Troubleshooting information can be found [in the docs](https://docs.ubports.com/en/latest/userguide/install.html). If you need help, you can join UBports' support channels on [telegram](https://t.me/WelcomePlus) or [matrix](https://matrix.to/#/!KwdniMNeTmClpgHkND:matrix.org?via=matrix.org&via=ubports.chat&via=disroot.org) or ask a question [in the forum](https://forums.ubports.com/) or on [askubuntu](https://askubuntu.com). If you believe that the UBports Installer is not working correctly, you can also [file a new issue](https://github.com/ubports/ubports-installer/issues/new) to help us solve the problem. Use the _Report a bug_ button directly in the installer to generate a template for a bugreport with all the important metadata automatically filled out.
+Fear not! Installing [Droidian](https://droidian.org) on your [device](https://devices.droidian.org) is easy! Just download the Droidian Installer package for your operating system and sit back and relax while your computer does all the rest. Installing third-party operating systems has never been so easy!
 
 ## Config files
 
-By default, the Installer will always use the latest version of the [installation configuration files](https://github.com/ubports/installer-configs) available. Should you want to specify a custom config file, you can do that by starting the Installer with the `-f ./path/to/config.yml` argument. This can be used to test changes to the configuration or even to add new devices to the installer. The [structure of the config files is specified here](https://github.com/ubports/installer-configs#readme).
+By default, the Installer will always use the latest version of the [installation configuration files](https://github.com/droidian-devices/installer-configs) available. Should you want to specify a custom config file, you can do that by starting the Installer with the `-f ./path/to/config.yml` argument. This can be used to test changes to the configuration or even to add new devices to the installer. The [structure of the config files is specified here](https://github.com/droidian-devices/installer-configs#readme).
 
 ## Logs
 
-If the installer runs into an error, it will usually present you with the option to create a bug report. It is always a good idea to make use of that feature, because that way the developers will almost always have all the information they need to help you. If you still have to look at the log file for some reason, you can find it in `~/.cache/ubports/ubports-installer.log` on linux (or `~/snap/ubports-installer/current/.cache/ubports/ubports-installer.log` if you're using the snap package). On Windows, it will be located at `%APPDATA%\ubports\ubports-installer.log` and on macOS you can find it under `$HOME/Library/Caches/ubports/ubports-installer.log`.
+If the installer runs into an error, it will usually present you with the option to create a bug report. It is always a good idea to make use of that feature, because that way the developers will almost always have all the information they need to help you. If you still have to look at the log file for some reason, you can find it in `~/.cache/droidian/droidian-installer.log` on linux (or `~/snap/droidian-installer/current/.cache/droidian/droidian-installer.log` if you're using the snap package). On Windows, it will be located at `%APPDATA%\droidian\droidian-installer.log` and on macOS you can find it under `$HOME/Library/Caches/droidian/droidian-installer.log`.
 
 ## Set up for development
 
 Ensure you have properly installed [`nodejs` and `npm`](https://nodejs.org/en/download/package-manager/).
 
 ```
-git clone https://github.com/ubports/ubports-installer.git
-cd ubports-installer
+git clone https://github.com/droidian-releng/droidian-installer.git
+cd droidian-installer
 
 npm install
 ```
@@ -35,10 +27,10 @@ npm install
 $ npm start -- -h
 Usage: npm start -- [-f <file>] [-v[v] [-d]
 
-UBports Installer (0.7.2-beta) source for linux
-GPL-3.0 UBports Foundation <info@ubports.com>
-The easy way to install Ubuntu Touch on UBports devices. A friendly cross-platform Installer for Ubuntu Touch. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
-https://devices.ubuntu-touch.io
+Droidian Installer (0.0.1) source for linux
+GPL-3.0 UBports Foundation <info@ubports.com>, Erik Inkinen <erik.inkinen@erikinkinen.fi>
+The easy way to install Droidian on supported devices. A friendly cross-platform Installer for Droidian. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
+https://devices.droidian.org
 
 Options:
   -V, --version        output the version number
@@ -82,7 +74,7 @@ The UBports Foundation maintains a various free- and open-source NPM libraries f
 
 ## License
 
-Original development by [Marius Gripsgård](http://mariogrip.com/) and [Johannah Sprinz](https://spri.nz). Copyright (C) 2017-2022 [UBports Foundation](https://ubports.com).
+Original development by [Marius Gripsgård](http://mariogrip.com/) and [Johannah Sprinz](https://spri.nz). Copyright (C) 2017-2022 [UBports Foundation](https://ubports.com). Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

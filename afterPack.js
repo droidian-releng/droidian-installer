@@ -2,8 +2,9 @@
 
 /*
  * Copyright (C) 2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
- * This program is free software: you can redistribute it and/or modify
+ * This program is free software: yosu can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -30,11 +31,11 @@ module.exports = async function (context) {
 
   if (context.targets.find(target => target.name === "deb")) {
     wrapperScript = `#!/bin/bash
-      /opt/ubports-installer/ubports-installer.bin --no-sandbox "$@"
+      /opt/droidian-installer/droidian-installer.bin --no-sandbox "$@"
     `;
   } else if (context.targets.find(target => target.name === "appImage")) {
     wrapperScript = `#!/bin/bash
-      "\${BASH_SOURCE%/*}"/ubports-installer.bin --no-sandbox "$@"
+      "\${BASH_SOURCE%/*}"/droidian-installer.bin --no-sandbox "$@"
     `;
   } else {
     console.log("no wrapper needed");
@@ -42,9 +43,9 @@ module.exports = async function (context) {
   }
 
   fs.moveSync(
-    path.join(distDir, "ubports-installer"),
-    path.join(distDir, "ubports-installer.bin")
+    path.join(distDir, "droidian-installer"),
+    path.join(distDir, "droidian-installer.bin")
   );
-  fs.writeFileSync(path.join(distDir, "ubports-installer"), wrapperScript);
-  fs.chmodSync(path.join(distDir, "ubports-installer"), 0o765);
+  fs.writeFileSync(path.join(distDir, "droidian-installer"), wrapperScript);
+  fs.chmodSync(path.join(distDir, "droidian-installer"), 0o765);
 };

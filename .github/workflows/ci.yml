@@ -127,7 +127,7 @@ jobs:
       - name: archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ubports-installer
+          name: droidian-installer
           path: |
             dist/*.deb
             dist/*.AppImage
@@ -155,7 +155,7 @@ jobs:
               .then(({data: {id: release_id}}) =>
                 Promise.all(
                   fs.readdirSync('./dist/').filter(f =>
-                      f.match(/ubports-installer_*.*/) &&
+                      f.match(/droidian-installer_*.*/) &&
                       !f.includes("snap") &&
                       !f.includes("blockmap")
                     )

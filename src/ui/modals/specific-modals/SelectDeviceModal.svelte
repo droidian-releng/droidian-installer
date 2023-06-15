@@ -33,12 +33,12 @@
       </div>
     </div>
     <p>
-      Not all <a href="https://devices.ubuntu-touch.io">Ubuntu Touch devices</a>
-      are supported by the UBports Installer yet. You can find installation instructions
+      Not all <a href="https://devices.droidian.org">Droidian devices</a>
+      are supported by the Droidian Installer yet. You can find installation instructions
       for devices not listed here on
-      <a href="https://devices.ubuntu-touch.io">devices.ubuntu-touch.io</a>. If
+      <a href="https://devices.droidian.org">devices.droidian.org</a>. If
       you want to help, you can
-      <a href="https://github.com/ubports/installer-configs#readme"
+      <a href="https://github.com/droidian-devices/installer-configs#readme"
         >contribute a config file</a
       > for any device and operating system!
     </p>

@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2020-2021 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +21,7 @@
 const { CancelablePromise } = require("cancelable-promise");
 
 /**
- * UBports Installer plugin
+ * Droidian Installer plugin
  * @abstract
  * @property {Props} props properties
  * @param {String} cachePath cache path

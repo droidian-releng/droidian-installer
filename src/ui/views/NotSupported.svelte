@@ -22,7 +22,7 @@
     </p>
     <p>
       See
-      <a href="http://devices.ubuntu-touch.io">devices.ubuntu-touch.io</a>
+      <a href="http://devices.droidian.org">devices.droidian.org</a>
       for more info
     </p>
     <hr />
@@ -30,7 +30,7 @@
     <p>
       You can try selecting your device manually, but please only do so if
       you're sure that your exact model is actually supported! You might also
-      want to <a href="http://devices.ubuntu-touch.io">file a bug</a>.
+      want to <a href="http://devices.droidian.org">file a bug</a>.
     </p>
     <button
       class="btn btn-outline-dark"

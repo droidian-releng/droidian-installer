@@ -13,7 +13,7 @@ body {
 }
 
 * {
-  font-family: "Ubuntu", "HelveticaNeue-Light", "Helvetica Neue Light",
+  font-family: "Cantarell", "HelveticaNeue-Light", "Helvetica Neue Light",
     "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -22,11 +22,11 @@ body {
 }
 
 @font-face {
-  font-family: "Ubuntu";
+  font-family: "Cantarell";
   font-style: normal;
   font-weight: 400;
-  src: local("Ubuntu"), local("Ubuntu Regular"), local("Ubuntu-Regular"),
-    url("./fonts/Ubuntu.ttf") format("truetype");
+  src: local("Cantarell"), local("Cantarell Regular"), local("Cantarell-Regular"),
+    url("./fonts/Cantarell-Regular.ttf") format("truetype");
 }
 
 h1 {
@@ -46,13 +46,14 @@ h4 {
 }
 
 .btn-primary {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #3DDC84;
+  border-color:	#3DDC84;
 }
 
 .btn-primary:hover {
-  background-color: #286090;
-  border-color: #204d74;
+  color: #3DDC84;
+  background-color: #ffffff;
+  border-color:	#3DDC84;
 }
 
 a {

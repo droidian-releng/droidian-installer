@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +22,7 @@ const cli = require("commander");
 const log = require("./log.js");
 const packageInfo = require("../../package.json");
 
-const description = `UBports Installer (${packageInfo.version}) ${
+const description = `Droidian Installer (${packageInfo.version}) ${
   packageInfo.package || "source"
 } for ${process.platform}
 ${packageInfo.license} ${packageInfo.author}

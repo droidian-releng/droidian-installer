@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=ubports-installer
-Comment=UBports Installer
-Exec=ubports-installer
+Name=droidian-installer
+Comment=Droidian Installer
+Exec=droidian-installer
 Terminal=false
 Type=Application
 Icon=${SNAP}/meta/gui/icon.png

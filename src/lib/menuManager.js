@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2022 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,12 +25,11 @@ const udev = require("./udev.js");
 const settings = require("./settings.js");
 const cache = require("./cache.js");
 const mainEvent = require("./mainEvent.js");
-const reporter = require("./reporter.js");
 
 class MenuManager {
   /**
    * build global application menu
-   * @param {BrowserWindow} mainWindow main UBports Installer window
+   * @param {BrowserWindow} mainWindow main Droidian Installer window
    */
   getMenuTemplate(mainWindow) {
     return [
@@ -37,22 +37,14 @@ class MenuManager {
         label: "About",
         submenu: [
           {
-            label: "About the UBports Foundation...",
-            click: () => shell.openExternal("https://ubports.com")
-          },
-          {
-            label: "About Ubuntu Touch...",
-            click: () => shell.openExternal("https://ubuntu-touch.io")
-          },
-          {
-            label: "Donate",
-            click: () => shell.openExternal("https://ubports.com/donate")
+            label: "About the Droidian...",
+            click: () => shell.openExternal("https://droidian.org")
           },
           {
             label: "Source",
             click: () =>
               shell.openExternal(
-                "https://github.com/ubports/ubports-installer/tree/" +
+                "https://github.com/droidian-releng/droidian-installer/tree/" +
                   packageInfo.version
               )
           },
@@ -60,7 +52,7 @@ class MenuManager {
             label: "License",
             click: () =>
               shell.openExternal(
-                "https://github.com/ubports/ubports-installer/blob/" +
+                "https://github.com/droidian-releng/droidian-installer/blob/" +
                   packageInfo.version +
                   "/LICENSE"
               )
@@ -124,7 +116,7 @@ class MenuManager {
             visible: settings.size
           },
           {
-            label: "Restart UBports Installer",
+            label: "Restart Droidian Installer",
             click: () => {
               mainEvent.emit("restart");
             }
@@ -171,17 +163,6 @@ class MenuManager {
                 "never.windowsDrivers",
                 !settings.get("never.windowsDrivers")
               )
-          },
-          {
-            label: "Never ask for OPEN-CUTS automatic reporting",
-            checked: settings.get("never.opencuts"),
-            type: "checkbox",
-            click: () =>
-              settings.set("never.opencuts", !settings.get("never.opencuts"))
-          },
-          {
-            label: "OPEN-CUTS API Token",
-            click: () => reporter.tokenDialog(mainWindow)
           }
         ]
       },
@@ -192,7 +173,7 @@ class MenuManager {
             label: "Bug tracker",
             click: () =>
               shell.openExternal(
-                "https://github.com/ubports/ubports-installer/issues"
+                "https://github.com/droidian-releng/droidian-installer/issues"
               )
           },
           {
@@ -200,26 +181,8 @@ class MenuManager {
             click: () => window.send("user:report")
           },
           {
-            label: "Troubleshooting",
-            click: () =>
-              shell.openExternal(
-                "https://docs.ubports.com/en/latest/userguide/install.html#troubleshooting"
-              )
-          },
-          {
-            label: "UBports Forums",
-            click: () => shell.openExternal("https://forums.ubports.com")
-          },
-          {
-            label: "AskUbuntu",
-            click: () =>
-              shell.openExternal(
-                "https://askubuntu.com/questions/tagged/ubuntu-touch"
-              )
-          },
-          {
             label: "Telegram",
-            click: () => shell.openExternal("https://t.me/WelcomePlus")
+            click: () => shell.openExternal("https://t.me/Droidian")
           }
         ]
       }
@@ -228,7 +191,7 @@ class MenuManager {
 
   /**
    * set global application menu
-   * @param {BrowserWindow} mainWindow main UBports Installer window
+   * @param {BrowserWindow} mainWindow main Droidian Installer window
    */
   setMenu(mainWindow) {
     Menu.setApplicationMenu(

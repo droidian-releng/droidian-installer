@@ -2,6 +2,7 @@
 
 /*
  * Copyright (C) 2017-2020 UBports Foundation <info@ubports.com>
+ * Copyright (C) 2023 Erik Inkinen <erik.inkinen@erikinkinen.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,7 +49,7 @@ class Logger {
     });
 
     this.logfile = new winston.transports.File({
-      filename: path.join(cachePath, "ubports-installer.log"),
+      filename: path.join(cachePath, "droidian-installer.log"),
       options: { flags: "w" },
       level: "command"
     });
