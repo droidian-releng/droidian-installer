@@ -46,7 +46,7 @@
     </button>
     <p>
       If your device is not detected automatically, you can select it manually
-      to proceed. Please note that the UBports Installer will only work on
+      to proceed. Please note that the Droidian Installer will only work on
       <a href="http://devices.droidian.org">supported devices</a>.
     </p>
     <button
@@ -61,6 +61,12 @@
         Loading device list...
       {/if}
     </button>
+    <p>
+      Droidian Installer is based on UBports Installer. 
+      We would like to thank them for their awesome work on the installer. 
+      You can find more information about UBports Installer 
+      <a href="https://devices.ubuntu-touch.io/installer/">here</a>.
+    </p>
   </div>
 </div>
 
