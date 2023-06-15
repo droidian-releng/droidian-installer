@@ -25,12 +25,12 @@
     </p>
     <p>
       Got more devices you want to flash?
-      <button
-        class="btn btn-info"
-        style="width: 100%;"
-        on:click={() => ipcRenderer.send("restart")}
-        >Flash another device!</button
-      >
     </p>
+    <button
+      class="btn btn-primary"
+      style="width: 100%;"
+      on:click={() => ipcRenderer.send("restart")}
+      >Flash another device!</button
+    >
   </div>
 </div>
