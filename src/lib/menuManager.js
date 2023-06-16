@@ -182,7 +182,7 @@ class MenuManager {
           },
           {
             label: "Telegram",
-            click: () => shell.openExternal("https://t.me/Droidian")
+            click: () => shell.openExternal("https://t.me/DroidianLinux")
           }
         ]
       }

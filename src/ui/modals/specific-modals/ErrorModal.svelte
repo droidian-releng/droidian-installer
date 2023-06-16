@@ -64,7 +64,7 @@
     {/if}
     <p>
       If you need help, you can join Droidian's support channels on
-      <a href="https://t.me/Droidian">Telegram</a>.
+      <a href="https://t.me/DroidianLinux">Telegram</a>.
     </p>
   </div>
   <div class="col" slot="actions">
