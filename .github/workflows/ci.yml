@@ -35,6 +35,8 @@ jobs:
 
       - name: npm ci
         run: npm ci
+      - name: npm audit fix
+        run: npm audit fix
       - name: npm audit
         run: npm audit --production
       - name: npm run lint
