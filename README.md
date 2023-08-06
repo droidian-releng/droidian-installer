@@ -27,7 +27,7 @@ npm install
 $ npm start -- -h
 Usage: npm start -- [-f <file>] [-v[v] [-d]
 
-Droidian Installer (0.0.2) source for linux
+Droidian Installer (0.0.3) source for linux
 GPL-3.0 UBports Foundation <info@ubports.com>, Erik Inkinen <erik.inkinen@erikinkinen.fi>
 The easy way to install Droidian on supported devices. A friendly cross-platform Installer for Droidian. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
 https://devices.droidian.org
