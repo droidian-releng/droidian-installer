@@ -1,4 +1,4 @@
-# Droidian Installer 
+# Droidian Installer
 
 Fear not! Installing [Droidian](https://droidian.org) on your [device](https://devices.droidian.org) is easy! Just download the Droidian Installer package for your operating system and sit back and relax while your computer does all the rest. Installing third-party operating systems has never been so easy!
 
@@ -37,8 +37,6 @@ Options:
   -f, --file <file>    Override the official config by loading a YAML local file
   -v, --verbose        Print debugging information. Multiple -v options increase the verbosity
   -d, --debug          Enable electron's web debugger to inspect the frontend (default: false)
-  --systemimage <url>  Set a custom systemimage server url (default:
-                       "https://system-image.ubports.com/")
   -h, --help           display help for command
 ```
 

@@ -67,7 +67,7 @@ describe("adb plugin", () => {
         .spyOn(adbPlugin.adb, "sideload")
         .mockImplementation((path, cb) => Promise.resolve(cb(1)));
       return adbPlugin
-        .action__sideload({ group: "Ubuntu Touch", file: "main.zip" })
+        .action__sideload({ group: "Droidian", file: "main.zip" })
         .then(r => {
           expect(r).toEqual(undefined);
           expect(adbPlugin.event.emit).toHaveBeenCalledTimes(5);
@@ -86,7 +86,7 @@ describe("adb plugin", () => {
         .mockImplementation((files, dest, cb) => Promise.resolve(cb(1)));
       return adbPlugin
         .action__push({
-          group: "Ubuntu Touch",
+          group: "Droidian",
           files: ["main.zip"],
           dest: "asdf"
         })

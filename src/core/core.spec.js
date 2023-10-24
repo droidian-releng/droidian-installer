@@ -16,7 +16,6 @@ it("should be a singleton", () => {
 });
 
 const settings = {
-  channel: "16.04/arm64/hybris/stable",
   wipe: false,
   bootstrap: true
 };
@@ -28,7 +27,7 @@ const handlers = {
 };
 const operating_systems = [
   {
-    name: "Ubuntu Touch",
+    name: "Droidian",
     compatible_installer: ">=9.9.9",
     steps: [{}]
   }
@@ -611,12 +610,6 @@ describe("Core module", () => {
       {
         exp: {
           AND: [
-            {
-              OR: [
-                { var: "channel", value: "16.04/arm64/hybris/stable" },
-                { var: "channel", value: "16.04/arm64/hybris/rc" }
-              ]
-            },
             { var: "wipe", value: false },
             { NOT: { var: "bootstrap", value: false } }
           ]

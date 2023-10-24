@@ -70,42 +70,6 @@ describe("PluginIndex", () => {
       });
     });
   });
-  describe("remote_value", () => {
-    it("should set remote_value", () => {
-      jest
-        .spyOn(pluginIndex.plugins.systemimage, "remote_values__channels")
-        .mockResolvedValue(["a"]);
-      return pluginIndex
-        .remote_value({ remote_values: { "systemimage:channels": { a: "b" } } })
-        .then(r => {
-          expect(r).toEqual(["a"]);
-          expect(
-            pluginIndex.plugins.systemimage.remote_values__channels
-          ).toHaveBeenCalledWith({
-            remote_values: { "systemimage:channels": { a: "b" } },
-            values: ["a"]
-          });
-          expect(
-            pluginIndex.plugins.systemimage.remote_values__channels
-          ).toHaveBeenCalledTimes(1);
-          pluginIndex.plugins.systemimage.remote_values__channels.mockRestore();
-        });
-    });
-    it("should resolve empty on invalid plugin", () => {
-      return pluginIndex
-        .remote_value({ remote_values: { "systemimage:invalid": { a: "b" } } })
-        .then(r => {
-          expect(r).toEqual([]);
-        });
-    });
-    it("should resolve empty on invalid provider", () => {
-      return pluginIndex
-        .remote_value({ remote_values: { "invalid:invalid": { a: "b" } } })
-        .then(r => {
-          expect(r).toEqual([]);
-        });
-    });
-  });
   describe("getPluginMappable()", () => {
     it("should return plugin array", () =>
       expect(pluginIndex.getPluginMappable()).toHaveLength(8));

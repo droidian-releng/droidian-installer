@@ -17,7 +17,7 @@ const { download, checkFile } = require("progressive-downloader");
 const { writeFile } = require("fs-extra");
 const core = new (require("./plugin.js"))(
   {
-    os: { name: "Ubuntu Touch" },
+    os: { name: "Droidian" },
     config: { codename: "yggdrasil" }
   },
   "a",
@@ -33,7 +33,7 @@ describe("core plugin", () => {
         expect(mainEvent.emit).toHaveBeenCalledWith("user:write:done");
         expect(mainEvent.emit).toHaveBeenCalledWith(
           "user:write:status",
-          "Ubuntu Touch successfully installed!",
+          "Droidian successfully installed!",
           false
         );
         expect(mainEvent.emit).toHaveBeenCalledWith(
@@ -196,7 +196,7 @@ describe("core plugin", () => {
     it("should write file", () =>
       core
         .action__write({
-          group: "Ubuntu Touch",
+          group: "Droidian",
           file: "testfile",
           content: "asdf"
         })
@@ -205,7 +205,7 @@ describe("core plugin", () => {
             expect.stringContaining(
               "a",
               "yggdrasil",
-              "Ubuntu Touch",
+              "Droidian",
               "testfile"
             ),
             "asdf"
