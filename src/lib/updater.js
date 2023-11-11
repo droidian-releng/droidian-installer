@@ -30,9 +30,13 @@ const semverLt = require("semver/functions/lt");
 class Updater {
   constructor() {
     this.cache = {};
-    this.updateUrl = `https://devices.ubuntu-touch.io/installer/${
-      packageInfo.package ? "?package=" + packageInfo.package : ""
-    }`;
+    this.updateUrl = "https://github.com/droidian-releng/droidian-installer/releases/download";
+    this.suffices = {
+      "AppImage": "linux_x86_64.AppImage",
+      "deb": "linux_amd64.deb",
+      "dmg": "mac_x64.dmg",
+      "exe": "win_x64.exe"
+    };
   }
 
   /**
@@ -69,7 +73,9 @@ class Updater {
    */
   async isOutdated() {
     const latest = await this.getLatestVersion();
-    return semverLt(packageInfo.version, latest) ? this.updateUrl : null;
+    const fullUrl = this.updateUrl + 
+      `/${latest}/droidian-installer_${latest}_${this.suffices[packageInfo.package]}`;
+    return semverLt(packageInfo.version, latest) ? fullUrl : null;
   }
 
   /**
@@ -78,7 +84,9 @@ class Updater {
    */
   async isPrerelease() {
     const latest = await this.getLatestVersion();
-    return semverGt(packageInfo.version, latest) ? this.updateUrl : null;
+    const fullUrl = this.updateUrl + 
+      `/${latest}/droidian-installer_${latest}_${this.suffices[packageInfo.package]}`;
+    return semverGt(packageInfo.version, latest) ? fullUrl : null;
   }
 }
 
