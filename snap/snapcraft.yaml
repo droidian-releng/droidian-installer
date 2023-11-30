@@ -1,4 +1,4 @@
-name: drodian-installer
+name: droidian-installer
 title: Droidian Installer
 adopt-info: droidian-installer
 summary: The easy way to install Droidian on supported devices.
@@ -32,7 +32,7 @@ parts:
     plugin: dump
     source: .
     build-snaps:
-      - node/16/stable
+      - node/18/stable
     build-packages:
       - npm
       - libgconf-2-4
@@ -41,14 +41,13 @@ parts:
       - libnss3
     override-pull: |
       snapcraftctl pull
-      snapcraftctl set-version `cat $SNAPCRAFT_PROJECT_DIR/package.json | grep version | sed s/'  \"version\": \"'//g | sed s/'\",'//g`
+      snapcraftctl set-version 0.0.6
     override-build: |
       echo "Running override-build script"
       http_proxy="${http_proxy:-}"
       https_proxy="${https_proxy:-}"
       echo "https_proxy: " $https_proxy
       echo "http_proxy: " $http_proxy
-      echo "updating npm" && npm install npm@latest -g
       echo "installing dependencies" && npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=$https_proxy npm install || sleep 15 && npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=$https_proxy npm install
       echo "rollup" && npm run build
       [ `uname -m` == "aarch64" ] && DROIDIAN_ARCH=arm64 || DROIDIAN_ARCH=x64
